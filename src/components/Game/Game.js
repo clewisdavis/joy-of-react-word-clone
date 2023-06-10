@@ -13,17 +13,21 @@ console.info({ answer });
 
 function Game() {
   
-  //lift up state
-  const [guess, setGuess] = React.useState('');
+  const [guesses, setGuesses] = React.useState([]);
+
+  function handleSubmitGuess(tentativeGuess) {
+    //TODO
+    console.log('Received guess', tentativeGuess);
+    setGuesses([...guesses, tentativeGuess]);
+  }
 
   return <>
     <p>My Word Game!</p>
     <PreviousGuesses
-      guess={guess}
+      guesses={guesses}
     />
     <GuessInput
-      guess={guess}
-      setGuess={setGuess}
+      handleSubmitGuess={handleSubmitGuess}
     />
   </>;
 }

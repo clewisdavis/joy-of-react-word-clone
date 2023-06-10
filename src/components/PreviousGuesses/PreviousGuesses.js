@@ -1,10 +1,9 @@
 import React from "react";
 
-function PreviousGuesses({ guess }) {
+function PreviousGuesses({ guesses }) {
   return <>
     <div className="guess-results">
-      <p className="guess">{ guess }</p>
-      <p className="guess">GUESS</p>
+      <p className="guess">{ guesses.toString() }</p>
     </div>
   </>;
 }
