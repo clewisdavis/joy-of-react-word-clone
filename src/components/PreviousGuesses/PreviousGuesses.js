@@ -3,7 +3,9 @@ import React from "react";
 function PreviousGuesses({ guesses }) {
   return <>
     <div className="guess-results">
-      <p className="guess">{ guesses.toString() }</p>
+      {guesses.map((guess, index) => (
+          <p key={index} className="guess">{ guess  }</p>
+      ))}
     </div>
   </>;
 }
