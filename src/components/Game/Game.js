@@ -24,7 +24,10 @@ function Game() {
 
   return <>
     <p>My Word Game!</p>
-    <Guess />
+    <Guess 
+      numRows={5}
+      numCols={5}
+    />
     <PreviousGuesses
       guesses={guesses}
     />
