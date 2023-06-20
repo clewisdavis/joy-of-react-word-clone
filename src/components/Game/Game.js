@@ -27,6 +27,7 @@ function Game() {
     <Guess 
       numRows={5}
       numCols={5}
+      guesses={guesses}
     />
     <PreviousGuesses
       guesses={guesses}

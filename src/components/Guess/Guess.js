@@ -1,52 +1,21 @@
 import React from "react";
 import { range } from "../../utils";
 
-function Guess({ numRows, numCols }) {
+function Guess({ numRows, numCols, guesses }) {
   return (
     <>
       <div className="guess-results">
-        <p className="guess">
-          <span className="cell">F</span>
-          <span className="cell">I</span>
-          <span className="cell">R</span>
-          <span className="cell">S</span>
-          <span className="cell">T</span>
-        </p>        
-        <p className="guess">
-          <span className="cell">F</span>
-          <span className="cell">I</span>
-          <span className="cell">R</span>
-          <span className="cell">S</span>
-          <span className="cell">T</span>
-        </p>
-        <p className="guess">
-          <span className="cell">G</span>
-          <span className="cell">U</span>
-          <span className="cell">E</span>
-          <span className="cell">S</span>
-          <span className="cell">S</span>
-        </p>
-        <p className="guess">
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-        </p>
-        <p className="guess">
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-        </p>
-        <p className="guess">
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-          <span className="cell"></span>
-        </p>
+        { // render the rows, map over
+          range(numRows).map(num => (
+            <p key={num} className="guess">
+              { // render the columns, map over
+                range(numCols).map(num => (
+                  <span className="cell">{ guesses }</span>
+                ))
+              }
+            </p>
+          ))
+        }
       </div>
     </>
   )
