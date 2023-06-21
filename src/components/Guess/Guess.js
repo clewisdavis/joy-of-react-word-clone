@@ -1,22 +1,17 @@
 import React from "react";
 import { range } from "../../utils";
 
-function Guess({ numRows, numCols, guesses }) {
+function Guess({ numRows, numCols, guesses, value }) {
   return (
     <>
-      <div className="guess-results">
-        { // render the rows, map over
-          range(numRows).map(num => (
-            <p key={num} className="guess">
-              { // render the columns, map over
-                range(numCols).map(num => (
-                  <span className="cell">{ guesses }</span>
-                ))
-              }
-            </p>
+      <p className="guess">
+        {
+          // slit method to break it down to each letter
+          value.split('').map((letter, index) => (
+            <span key={index} className="cell">{letter}</span>
           ))
         }
-      </div>
+      </p>
     </>
   )
 }
