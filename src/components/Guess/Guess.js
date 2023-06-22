@@ -6,10 +6,12 @@ function Guess({ value }) {
     <>
       <p className="guess">
         {
-          // split method to break it down to each letter
+          // range utility to render the guess boxes
           range(5).map((num) => (
             <span key={num} className="cell">
-              {value ? value[num] : undefined}
+              { // condition to show the value
+                value ? value[num] : undefined
+              }
             </span>
           ))
         }
