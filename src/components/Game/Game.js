@@ -25,6 +25,7 @@ function Game() {
     <p>My Word Game!</p>
     <PreviousGuesses
       guesses={guesses}
+      answer={answer}
     />
     <GuessInput
       handleSubmitGuess={handleSubmitGuess}
